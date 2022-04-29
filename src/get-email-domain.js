@@ -12,7 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getEmailDomain(email) {
   let beginDog =  email.lastIndexOf('@');
-  return email.slice(beginDog+1, email.length)
+  return email.slice(beginDog+1, email.length);
 }
 
 module.exports = {
