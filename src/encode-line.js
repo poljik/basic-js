@@ -1,3 +1,4 @@
+const { interfaces } = require('mocha');
 const { NotImplementedError } = require('../extensions/index.js');
 
 /**
@@ -10,9 +11,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For aabbbc should return 2a3bc
  *
  */
-function encodeLine(/* str */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function encodeLine(str) {
+  let res = '';
+  let count = 1;
+  for (let index = 0; index < str.length; index++) {
+    console.log(str[index]);
+    if (str[index] == str[index+1]) {
+      count++;
+    } else {
+      if (count > 1) {
+        res += count + str[index];
+        count = 1;
+      } else {
+        res += str[index];
+      }
+    }
+  }
+  return res;
 }
 
 module.exports = {
